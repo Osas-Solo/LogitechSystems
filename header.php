@@ -91,12 +91,24 @@ if (isset($_SESSION["username"])) {
                                     <li class="nav-item">
                                         <a class="nav-link" href="store.php">Store</a>
                                     </li>
+                                    <?php
+                                    if ($customer->is_found()) {
+                                    ?>
                                     <li class="nav-item">
                                         <a class="nav-link" href="dashboard.php">Dashboard</a>
+                                    </li>
+                                    <?php
+                                    } else {
+                                    ?>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="login.php">Login</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="signup.php">Signup</a>
                                     </li>
+                                    <?php
+                                    }
+                                    ?>
                                     <?php
                                     if ($customer->is_found()) {
                                     ?>
