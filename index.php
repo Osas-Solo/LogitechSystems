@@ -1,7 +1,6 @@
 <?php
 $page_title = "Home";
 require_once "header.php";
-require_once "entities.php";
 
 $featured_products = Product::get_products($database_connection, "", "lpt");
 $recent_orders = Order::get_order_products($database_connection);

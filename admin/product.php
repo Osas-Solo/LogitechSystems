@@ -1,7 +1,6 @@
 <?php
 $page_title = "Product";
 require_once "header.php";
-require_once "../entities.php";
 
 if (!isset($_SESSION["admin"])) {
     $login_url = "http://" . $_SERVER["HTTP_HOST"] . dirname($_SERVER["PHP_SELF"]) . "/index.php";

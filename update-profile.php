@@ -1,7 +1,6 @@
 <?php
 $page_title = "Update Profile";
 require_once "header.php";
-require_once "entities.php";
 
 if (isset($_SESSION["username"])) {
     $username = $_SESSION["username"];
@@ -122,9 +121,8 @@ if (isset($_POST["update"])) {
 
                                     <div class="mb-4">
                                         <label for="delivery-address" class="form-label">Delivery Address</label>
-                                        <textarea id="delivery-address" name="delivery-address" class="form-control" required>
-                                         <?php
-                                         if (isset($_POST["delivery-address"])) {
+                                        <textarea id="delivery-address" name="delivery-address" class="form-control"
+                                                  required><?php if (isset($_POST["delivery-address"])) {
                                              echo $_POST["delivery-address"];
                                          } else {
                                              echo $customer->delivery_address;

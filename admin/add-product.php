@@ -1,7 +1,6 @@
 <?php
 $page_title = "Add Product";
 require_once "header.php";
-require_once "../entities.php";
 
 if (!isset($_SESSION["admin"])) {
     $login_url = "http://" . $_SERVER["HTTP_HOST"] . dirname($_SERVER["PHP_SELF"]) . "/index.php";
@@ -65,13 +64,8 @@ $product_categories = ProductCategory::get_product_categories($database_connecti
                                 </div>
                                 <div class="col-12 product-name large">
                                     <label><h2>Product Name</h2></label>
-                                    <textarea class="form-control" id="product-name" name="product-name" rows="5" required>
-                                        <?php
-                                        if (isset($_POST["product-name"])) {
-                                            echo $_POST["product-name"];
-                                        }
-                                        ?>
-                                    </textarea>
+                                    <textarea class="form-control" id="product-name" name="product-name" rows="5"
+                                              required><?php if (isset($_POST["product-name"])) {echo $_POST["product-name"];} ?></textarea>
                                 </div>
                                 <div class="col-12 mb-5 px-0">
                                     <hr>
@@ -113,13 +107,8 @@ $product_categories = ProductCategory::get_product_categories($database_connecti
                                 </div>
                                 <div class="col-12">
                                     <label><h2>Description</h2></label>
-                                    <textarea class="form-control" id="description" name="description" rows="5" required>
-                                        <?php
-                                        if (isset($_POST["description"])) {
-                                            echo $_POST["description"];
-                                        }
-                                        ?>
-                                    </textarea>
+                                    <textarea class="form-control" id="description" name="description" rows="5"
+                                              required><?php if (isset($_POST["description"])) {echo $_POST["description"];} ?></textarea>
                                 </div>
                             </div>
                             <!-- Product Info -->

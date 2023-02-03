@@ -1,7 +1,6 @@
 <?php
 $page_title = "Cart";
 require_once "header.php";
-require_once "entities.php";
 
 if (isset($_SESSION["username"])) {
     $username = $_SESSION["username"];
@@ -37,7 +36,7 @@ $cart_products = CartProduct::get_cart_products($database_connection, $username)
                         if ($number_of_cart_products == 0) {
                             ?>
                             <div class="col-12 text-center">
-                                <h2>Sorry, you haven't added any item to your cart yet. Please visit out
+                                <h2>Sorry, you haven't added any item to your cart yet. Please visit our
                                     <a href="store.php">store</a> to see available products.</h2>
                             </div>
                             <?php
@@ -235,7 +234,9 @@ function checkout_cart(Customer $customer, mysqli $database_connection) {
     }
 
     if ($database_connection->multi_query($order_insert_query)) {
+        $database_connection->next_result();
         if ($database_connection->multi_query($update_products_query)) {
+            $database_connection->next_result();
             if ($database_connection->query($cart_removal_query)) {
                 $alert = "<script>
                     if (confirm('Order made successfully')) {";

@@ -1,9 +1,10 @@
 <?php
-require_once("../entities.php");
 
 $page_title = "Customer";
 
 $username = "";
+
+require_once "header.php";
 
 if (isset($_GET["username"])) {
     $username = $_GET["username"];
@@ -12,7 +13,6 @@ if (isset($_GET["username"])) {
     $page_title .= " $username";
 }
 
-require_once "header.php";
 
 if (!isset($_SESSION["admin"])) {
     $login_url = "http://" . $_SERVER["HTTP_HOST"] . dirname($_SERVER["PHP_SELF"]) . "/index.php";

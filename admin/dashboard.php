@@ -1,6 +1,4 @@
 <?php
-require_once("../entities.php");
-
 $page_title = "Admin Dashboard";
 require_once "header.php";
 

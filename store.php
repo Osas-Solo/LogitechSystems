@@ -1,7 +1,6 @@
 <?php
 $page_title = "Store";
 require_once "header.php";
-require_once "entities.php";
 
 $search_text = "";
 

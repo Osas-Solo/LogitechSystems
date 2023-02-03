@@ -1,13 +1,10 @@
 <?php
-session_start();
+$page_title = "Signup";
+require_once "header.php";
 
 if (isset($_SESSION["username"])) {
     session_destroy();
 }
-
-$page_title = "Signup";
-require_once "header.php";
-require_once "entities.php";
 
 if (isset($_POST["signup"])) {
     signup_customer($database_connection);

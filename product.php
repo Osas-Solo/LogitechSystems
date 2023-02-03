@@ -1,7 +1,6 @@
 <?php
 $page_title = "Product";
 require_once "header.php";
-require_once "entities.php";
 
 $product_id = $_GET['product-id'];
 

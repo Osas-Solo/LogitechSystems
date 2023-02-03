@@ -1,7 +1,6 @@
 <?php
 $page_title = "Order";
 require_once "header.php";
-require_once "entities.php";
 
 if (isset($_SESSION["username"])) {
     $username = $_SESSION["username"];

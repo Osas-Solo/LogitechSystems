@@ -1,12 +1,10 @@
 <?php
-require_once("../entities.php");
+$page_title = "Admin Login";
+require_once "header.php";
 
 if (isset($_POST["login"])) {
     login_admin($database_connection);
 }   //  end of if submit is set
-
-$page_title = "Admin Login";
-require_once "header.php";
 ?>
 
 <div class="col-12 header-followup">
